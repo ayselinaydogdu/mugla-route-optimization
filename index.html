@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Route Navigator - Muğla</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1>🗺️ Smart Route Navigator</h1>
+            <p>Muğla - En Kısa Yol Bulucu (Dijkstra Algoritması)</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Instructions Panel -->
+        <div class="panel instructions">
+            <h2>📍 Nasıl Kullanılır?</h2>
+            <ol>
+                <li>Harita üzerinde <strong>başlangıç noktasına</strong> tıklayın (🔵 Mavi)</li>
+                <li>Daha sonra <strong>varış noktasına</strong> tıklayın (🔴 Kırmızı)</li>
+                <li>Dijkstra algoritması otomatik olarak en kısa yolu hesaplayacak</li>
+                <li>Yol harita üzerinde yeşil çizgi ile gösterilecek</li>
+            </ol>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="panel info-panel" id="infoPanel">
+            <div class="info-item">
+                <span class="label">Durum:</span>
+                <span class="value" id="status">Başlangıç noktası seçin</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Başlangıç:</span>
+                <span class="value" id="startNode">-</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Varış:</span>
+                <span class="value" id="endNode">-</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Mesafe:</span>
+                <span class="value" id="distance">-</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Düğüm Sayısı:</span>
+                <span class="value" id="pathNodes">-</span>
+            </div>
+            <button id="resetBtn" class="reset-btn" style="display: none;">🔄 Sıfırla</button>
+        </div>
+
+        <!-- Map Container -->
+        <div id="map"></div>
+
+        <!-- Stats Panel -->
+        <div class="panel stats-panel">
+            <h3>📊 Graph İstatistikleri</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalNodes">-</div>
+                    <div class="stat-label">Toplam Düğüm</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="totalEdges">-</div>
+                    <div class="stat-label">Toplam Bağlantı</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>🎓 CENG 3511 - Artificial Intelligence Final Project</p>
+        <p>Dijkstra's Algorithm Implementation with Leaflet.js</p>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
